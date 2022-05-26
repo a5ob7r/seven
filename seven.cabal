@@ -1,0 +1,18 @@
+cabal-version:      3.6
+name:               seven
+version:            0.0.0.0
+license:            BSD-3-Clause
+license-file:       LICENSE
+maintainer:         12132068+a5ob7r@users.noreply.github.com
+author:             a5ob7r
+tested-with:        ghc == 9.2.2
+synopsis:           A coreutils in Haskell
+extra-source-files:
+  CHANGELOG.md
+  README.md
+
+executable seven
+  main-is:        Main.hs
+  hs-source-dirs: app
+  ghc-options:    -W -Wall -Wcompat
+  build-depends:  base >=4.16.1.0 && <4.17
