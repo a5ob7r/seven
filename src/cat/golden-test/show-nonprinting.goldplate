@@ -1,0 +1,13 @@
+{
+  "command": "seven",
+  "arguments": ["cat", "--show-nonprinting"],
+  "stdin": [
+    "foobar あいうえお",
+    "\t",
+    ""
+  ],
+  "asserts": [
+    {"exit_code": 0},
+    {"stdout": "${GOLDPLATE_NAME}.stdout"}
+  ]
+}

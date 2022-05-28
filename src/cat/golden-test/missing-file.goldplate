@@ -1,0 +1,7 @@
+{
+  "command": "seven",
+  "arguments": ["cat", "foobar"],
+  "asserts": [
+    {"exit_code": 1}
+  ]
+}

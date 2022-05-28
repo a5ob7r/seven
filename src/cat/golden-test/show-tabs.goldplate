@@ -1,0 +1,9 @@
+{
+  "command": "seven",
+  "arguments": ["cat", "--show-tabs"],
+  "stdin": ["\tfoo \tbar"],
+  "asserts": [
+    {"exit_code": 0},
+    {"stdout": "${GOLDPLATE_NAME}.stdout"}
+  ]
+}

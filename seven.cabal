@@ -14,5 +14,8 @@ extra-source-files:
 executable seven
   main-is:        Main.hs
   hs-source-dirs: app
+  build-depends:
+    base >=4.16.1.0 && <4.17,
+    cat,
+    optparse-applicative ^>=0.17.0.0,
   ghc-options:    -W -Wall -Wcompat
-  build-depends:  base >=4.16.1.0 && <4.17
