@@ -1,0 +1,7 @@
+{
+  "command": "seven",
+  "arguments": ["tac", "files/nofile.txt"],
+  "asserts": [
+    {"exit_code": 1}
+  ]
+}

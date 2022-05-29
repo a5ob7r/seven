@@ -1,0 +1,15 @@
+{
+  "command": "seven",
+  "arguments": ["tac"],
+  "stdin": [
+    "foo",
+    "",
+    "bar",
+    "",
+    ""
+  ],
+  "asserts": [
+    {"exit_code": 0},
+    {"stdout": "${GOLDPLATE_NAME}.stdout"}
+  ]
+}

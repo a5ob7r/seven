@@ -59,7 +59,11 @@ jobs:
         run: cabal install --overwrite-policy=always -j
 
       - name: Test
-        run: goldplate --pretty-diff src/cat/golden-test
+        run: |
+          goldplate --pretty-diff \
+            src/cat/golden-test \
+            src/tac/golden-test \
+            ;
 
   format:
     runs-on: ubuntu-latest

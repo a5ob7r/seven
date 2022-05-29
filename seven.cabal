@@ -17,5 +17,6 @@ executable seven
   build-depends:
     base >=4.16.1.0 && <4.17,
     cat,
+    tac,
     optparse-applicative ^>=0.17.0.0,
   ghc-options:    -W -Wall -Wcompat

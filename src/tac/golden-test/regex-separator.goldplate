@@ -1,0 +1,14 @@
+{
+  "command": "seven",
+  "arguments": ["tac", "--regex", "--separator", "0."],
+  "stdin": [
+    "foo",
+    "f0",
+    "bar",
+    "foo0bar"
+  ],
+  "asserts": [
+    {"exit_code": 0},
+    {"stdout": "${GOLDPLATE_NAME}.stdout"}
+  ]
+}

@@ -1,0 +1,30 @@
+cabal-version: 3.6
+name:          tac
+version:       0.0.0.0
+synopsis:      tac - a part of coreutils
+license:       BSD-3-Clause
+license-file:  LICENSE
+author:        a5ob7r
+maintainer:    12132068+a5ob7r@users.noreply.github.com
+
+common common-options
+  build-depends:
+    base                 >=4.16.1.0 && <4.17,
+    optparse-applicative ^>=0.17.0.0,
+  ghc-options:   -W -Wall -Wcompat
+
+library
+  import:          common-options
+  hs-source-dirs:  src
+  exposed-modules: Seven.Tac
+  build-depends:
+    bytestring      ^>=0.11.3.1,
+    mtl             ^>=2.2.2,
+    regex-tdfa      ^>=1.3.1.2,
+    safe-exceptions ^>=0.1.7.2,
+
+executable tac
+  import:         common-options
+  main-is:        Main.hs
+  hs-source-dirs: app
+  build-depends:  tac

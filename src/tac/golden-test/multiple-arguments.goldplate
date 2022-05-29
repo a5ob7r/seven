@@ -1,0 +1,8 @@
+{
+  "command": "seven",
+  "arguments": ["tac", "files/foo.txt", "files/bar.txt"],
+  "asserts": [
+    {"exit_code": 0},
+    {"stdout": "${GOLDPLATE_NAME}.stdout"}
+  ]
+}
