@@ -35,7 +35,6 @@ jobs:
           path: ${{ steps.setup-haskell.outputs.cabal-store }}
           key: ci-${{ runner.os }}-${{ matrix.ghc }}-${{ hashFiles('cabal.project') }}
           restore-keys: |
-            ci-${{ runner.os }}-${{ matrix.ghc }}-${{ hashFiles('cabal.project') }}
             ci-${{ runner.os }}-${{ matrix.ghc }}-
 
       - name: Add path
