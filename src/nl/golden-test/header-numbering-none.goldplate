@@ -1,0 +1,14 @@
+{
+  "command": "seven",
+  "arguments": ["nl", "--header-numbering=n"],
+  "stdin": [
+    "\\:\\:\\:",
+    "",
+    "header",
+    ""
+  ],
+  "asserts": [
+    {"exit_code": 0},
+    {"stdout": "${GOLDPLATE_NAME}.stdout"}
+  ]
+}

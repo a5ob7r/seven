@@ -1,0 +1,30 @@
+cabal-version:      3.6
+name:               nl
+version:            0.0.0.0
+synopsis:           nl - a part of coreutils
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             a5ob7r
+maintainer:         12132068+a5ob7r@users.noreply.github.com
+
+common common-options
+  build-depends:
+    base                 >=4.16.1.0 && <4.17,
+    optparse-applicative ^>=0.17.0.0,
+  ghc-options:   -W -Wall -Wcompat
+
+library
+  import:          common-options
+  exposed-modules: Seven.Nl
+  hs-source-dirs:  src
+  build-depends:
+    bytestring      ^>=0.11.3.1,
+    mtl             ^>=2.2.2,
+    regex-tdfa      ^>=1.3.1.2,
+    safe-exceptions ^>=0.1.7.2,
+
+executable nl
+  import:         common-options
+  main-is:        Main.hs
+  build-depends:  nl
+  hs-source-dirs: app

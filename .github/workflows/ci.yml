@@ -61,6 +61,7 @@ jobs:
         run: |
           goldplate --pretty-diff \
             src/cat/golden-test \
+            src/nl/golden-test \
             src/tac/golden-test \
             ;
 

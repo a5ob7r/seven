@@ -1,0 +1,12 @@
+{
+  "command": "seven",
+  "arguments": ["nl", "--starting-line-number=-5"],
+  "stdin": [
+    "foo",
+    "bar"
+  ],
+  "asserts": [
+    {"exit_code": 0},
+    {"stdout": "${GOLDPLATE_NAME}.stdout"}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "command": "seven",
+  "arguments": ["nl", "--no-renumber"],
+  "stdin": [
+    "\\:\\:",
+    "body",
+    "\\:\\:",
+    "body",
+    "\\:\\:",
+    "body"
+  ],
+  "asserts": [
+    {"exit_code": 0},
+    {"stdout": "${GOLDPLATE_NAME}.stdout"}
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "command": "seven",
+  "arguments": ["nl", "--number-width=3"],
+  "stdin": [
+    "foo",
+    "bar"
+  ],
+  "asserts": [
+    {"exit_code": 0},
+    {"stdout": "${GOLDPLATE_NAME}.stdout"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "command": "seven",
+  "arguments": ["nl", "--body-numbering=pbody"],
+  "stdin": [
+    "\\:\\:",
+    "",
+    "body",
+    "bady",
+    ""
+  ],
+  "asserts": [
+    {"exit_code": 0},
+    {"stdout": "${GOLDPLATE_NAME}.stdout"}
+  ]
+}

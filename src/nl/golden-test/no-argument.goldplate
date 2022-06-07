@@ -1,0 +1,25 @@
+{
+  "command": "seven",
+  "arguments": ["nl"],
+  "stdin": [
+    "foo",
+    "bar",
+    "",
+    "",
+    "\\:\\:\\:",
+    "header",
+    "",
+    "header",
+    "\\:\\:",
+    "",
+    "body",
+    "body",
+    "\\:",
+    "footer",
+    ""
+  ],
+  "asserts": [
+    {"exit_code": 0},
+    {"stdout": "${GOLDPLATE_NAME}.stdout"}
+  ]
+}
