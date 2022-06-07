@@ -11,6 +11,11 @@ extra-source-files:
   CHANGELOG.md
   README.md
 
+flag pedantic
+  description: Enable -Werror
+  default:     False
+  manual:      True
+
 executable seven
   main-is:        Main.hs
   hs-source-dirs: app
@@ -21,3 +26,6 @@ executable seven
     tac,
     optparse-applicative ^>=0.17.0.0,
   ghc-options:    -W -Wall -Wcompat
+
+  if flag(pedantic)
+    ghc-options:  -Werror

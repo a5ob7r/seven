@@ -55,7 +55,7 @@ jobs:
           esac
 
       - name: Build
-        run: cabal install --overwrite-policy=always -j
+        run: cabal install --overwrite-policy=always -j --flags=pedantic
 
       - name: Test
         run: |

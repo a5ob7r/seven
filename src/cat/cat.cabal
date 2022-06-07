@@ -7,11 +7,19 @@ license-file:  LICENSE
 author:        a5ob7r
 maintainer:    12132068+a5ob7r@users.noreply.github.com
 
+flag pedantic
+  description: Enable -Werror
+  default:     False
+  manual:      True
+
 common common-options
   build-depends:
     base                 >=4.16.1.0 && <4.17,
     optparse-applicative ^>=0.17.0.0,
   ghc-options:   -W -Wall -Wcompat
+
+  if flag(pedantic)
+    ghc-options: -Werror
 
 library
   import:          common-options
