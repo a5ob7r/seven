@@ -199,11 +199,11 @@ newtype Nl a = Nl (ReaderT NlConfig (StateT NlState IO) a)
 runNl :: NlConfig -> NlState -> Nl () -> IO ((), NlState)
 runNl c s (Nl m) = runStateT (runReaderT m c) s
 
-nl :: NlOptions -> IO ()
+nl :: NlOptions -> IO ExitCode
 nl opt = do
   runNl (from opt) (from opt) go >>= \case
-    ((), NlState {errors = Errors []}) -> exitSuccess
-    _ -> exitWith $ ExitFailure 1
+    ((), NlState {errors = Errors []}) -> return ExitSuccess
+    _ -> return $ ExitFailure 1
   where
     -- Render each line.
     render :: LineRenderConf -> Maybe LineNo -> C.ByteString -> C.ByteString

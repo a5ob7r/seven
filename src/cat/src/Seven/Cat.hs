@@ -131,14 +131,14 @@ runCat :: Cat a -> CatConfig -> CatState -> IO (a, CatState)
 runCat (Cat a) c = runStateT $ runReaderT a c
 
 -- | Run a cat command.
-cat :: CatOptions -> IO ()
+cat :: CatOptions -> IO ExitCode
 cat options = do
   let c = from options
       s = CatState (from options, LineNo 0, LastLine Nothing, Errors [])
 
   runCat go c s >>= \case
-    (_, CatState (_, _, _, Errors [])) -> pure ()
-    _ -> exitWith $ ExitFailure 1
+    (_, CatState (_, _, _, Errors [])) -> return ExitSuccess
+    _ -> return $ ExitFailure 1
   where
     handleError :: SomeException -> Cat ()
     handleError e = do

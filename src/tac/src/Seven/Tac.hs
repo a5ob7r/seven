@@ -101,14 +101,14 @@ tacOpts :: ParserInfo TacOptions
 tacOpts = info (optionParser <**> helper) mempty
 
 -- | Run a tac command with options.
-tac :: TacOptions -> IO ()
+tac :: TacOptions -> IO ExitCode
 tac options = do
   let c = from options
       s = from options
 
   runTac go c s >>= \case
-    (_, TacState {errors = Errors []}) -> pure ()
-    _ -> exitWith $ ExitFailure 1
+    (_, TacState {errors = Errors []}) -> return ExitSuccess
+    _ -> return $ ExitFailure 1
   where
     handleError :: SomeException -> Tac ()
     handleError e = do

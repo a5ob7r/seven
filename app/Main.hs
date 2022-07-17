@@ -6,6 +6,7 @@ import Options.Applicative
 import Seven.Cat
 import Seven.Nl
 import Seven.Tac
+import System.Exit
 
 data Options
   = Cat CatOptions
@@ -28,6 +29,6 @@ sevenOpts = info (optionParser <**> helper) mempty
 main :: IO ()
 main =
   customExecParser (prefs helpLongEquals) sevenOpts >>= \case
-    Cat opt -> cat opt
-    Nl opt -> nl opt
-    Tac opt -> tac opt
+    Cat opt -> cat opt >>= exitWith
+    Nl opt -> nl opt >>= exitWith
+    Tac opt -> tac opt >>= exitWith
